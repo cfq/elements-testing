@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Service name goes here',
+  serviceName: 'GOV.UK Elements Accessibility Test',
 
   // Default port that prototype runs on
   port: '3000',
@@ -13,7 +13,7 @@ module.exports = {
   useAuth: 'false',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: 'true',
+  useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPs on production
   useHttps: 'true',
