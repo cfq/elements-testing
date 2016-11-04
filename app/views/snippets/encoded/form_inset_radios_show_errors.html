@@ -1,0 +1,96 @@
+&lt;h1 class=&quot;heading-medium&quot; id=&quot;example-conditional-errors&quot;&gt;
+  Your income
+&lt;/h1&gt;
+
+&lt;form&gt;
+  &lt;div class=&quot;form-group error&quot;&gt;
+
+    &lt;fieldset&gt;
+
+      &lt;legend&gt;
+        &lt;span class=&quot;form-label-bold&quot;&gt;How often do you get paid?&lt;/span&gt;
+        &lt;span class=&quot;error-message&quot;&gt;Choose an answer&lt;/span&gt;
+      &lt;/legend&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-weekly&quot; for=&quot;example-paid-weekly&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group&quot; value=&quot;Yes&quot; id=&quot;example-paid-weekly&quot;&gt;
+        Weekly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow js-hidden&quot; id=&quot;paid-weekly&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;example-paid-weekly-pay&quot;&gt;Weekly take home pay after tax&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; name=&quot;example-paid-weekly-pay&quot; type=&quot;text&quot; id=&quot;example-paid-weekly-pay&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-fortnightly&quot; for=&quot;example-paid-fortnightly&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group&quot; value=&quot;Yes&quot; id=&quot;example-paid-fortnightly&quot;&gt;
+        Fortnightly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow js-hidden&quot; id=&quot;paid-fortnightly&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;example-paid-fortnightly-pay&quot;&gt;Weekly take home pay after tax&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; name=&quot;example-paid-fortnightly-pay&quot; type=&quot;text&quot; id=&quot;example-paid-fortnightly-pay&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-monthly&quot; for=&quot;example-paid-monthly&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group&quot; value=&quot;Yes&quot; id=&quot;example-paid-monthly&quot;&gt;
+        Monthly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow js-hidden&quot; id=&quot;paid-monthly&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;example-paid-monthly-pay&quot;&gt;Monthly take home pay after tax&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; name=&quot;example-paid-monthly-pay&quot; type=&quot;text&quot; id=&quot;example-paid-monthly-pay&quot;&gt;
+      &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;h1 class=&quot;heading-medium&quot; id=&quot;example-conditional-errors-2&quot;&gt;
+  Your income
+&lt;/h1&gt;
+
+&lt;form&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+
+    &lt;fieldset&gt;
+
+      &lt;legend&gt;
+        &lt;span class=&quot;form-label-bold&quot;&gt;How often do you get paid?&lt;/span&gt;
+      &lt;/legend&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-weekly-2&quot; for=&quot;example-paid-weekly-2&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group-2&quot; value=&quot;Yes&quot; id=&quot;example-paid-weekly-2&quot;&gt;
+        Weekly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow js-hidden&quot; id=&quot;paid-weekly-2&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;example-paid-weekly-pay-2&quot;&gt;Weekly take home pay after tax&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; name=&quot;example-paid-weekly-pay-2&quot; type=&quot;text&quot; id=&quot;example-paid-weekly-pay-2&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-fortnightly-2&quot; for=&quot;example-paid-fortnightly-2&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group-2&quot; value=&quot;Yes&quot; id=&quot;example-paid-fortnightly-2&quot;&gt;
+        Fortnightly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow js-hidden&quot; id=&quot;paid-fortnightly-2&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;example-paid-fortnightly-pay-2&quot;&gt;Weekly take home pay after tax&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; name=&quot;example-paid-fortnightly-pay-2&quot; type=&quot;text&quot; id=&quot;example-paid-fortnightly-pay-2&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;label class=&quot;block-label&quot; data-target=&quot;paid-monthly-2&quot; for=&quot;example-paid-monthly-2&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-income-group-2&quot; value=&quot;Yes&quot; id=&quot;example-paid-monthly-2&quot; checked=&quot;checked&quot;&gt;
+        Monthly
+      &lt;/label&gt;
+      &lt;div class=&quot;panel panel-border-narrow panel-with-error&quot; id=&quot;paid-monthly-2&quot;&gt;
+        &lt;div class=&quot;form-group error&quot;&gt;
+          &lt;label class=&quot;form-label&quot; for=&quot;example-paid-monthly-pay-2&quot;&gt;
+            Monthly take home pay (after tax)?
+            &lt;span class=&quot;error-message&quot;&gt;
+              Error message about monthly pay goes here
+            &lt;/span&gt;
+          &lt;/label&gt;
+          &lt;input class=&quot;form-control&quot; name=&quot;example-paid-monthly-pay-2&quot; type=&quot;text&quot; id=&quot;example-paid-monthly-pay-2&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+

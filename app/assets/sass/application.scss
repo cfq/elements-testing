@@ -31,4 +31,9 @@ $path: "/public/images/";
 
 #test-case {
   padding-top: 2em;
+
+  &.in-template {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }

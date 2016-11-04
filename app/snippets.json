@@ -1,0 +1,12 @@
+{
+  "Buttons": {
+    "Button": "button.html",
+    "Disabled button": "button_disabled.html",
+    "Start now button": "button_start_now.html"
+  },
+
+  "Data": {
+    "Data table": "table.html",
+    "Numeric data table": "table_numeric.html"
+  }
+}
