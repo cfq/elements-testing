@@ -30,8 +30,8 @@
           {% for testname, testpath in tests %}
             <li>
               {{ testname }}: 
-              <a href="/test/{{ group | lower }}/{{ testpath | replace('.html', '') }}"> single</a>,
-              <a href="/test/{{ group | lower }}/{{ testpath | replace('.html', '') }}/template">in template</a>
+              <a href="/test/{{ group | lower | replace(' ', '_') }}/{{ testpath | replace('.html', '') }}"> single</a>,
+              <a href="/test/{{ group | lower | replace(' ', '_') }}/{{ testpath | replace('.html', '') }}/template">in template</a>
             </li>
           {% endfor %}
         </ul>

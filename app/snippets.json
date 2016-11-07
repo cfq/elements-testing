@@ -35,6 +35,31 @@
   },
 
   "Layout": {
+    "Grid: full": "grid_full.html",
+    "Grid: halves": "grid_halves.html",
+    "Grid: quarters": "grid_quarters.html",
+    "Grid: thirds": "grid_thirds.html",
+    "Grid: 1/3 + 2/3": "grid_thirds_one_third_two_thirds.html",
+    "Grid: 2/3 + 1/3": "grid_thirds_two_thirds_one_third.html",
+    "Spacing": "spacing.html"
+  },
 
+  "Phase banner": {
+    "Phase banner: alpha": "alpha.html",
+    "Phase banner: beta": "beta.html"
+  },
+
+  "Typography": {
+    "Headings": "typography_headings.html",
+    "Headings example": "typography_headings_example.html",
+    "Inset text": "typography_inset_text.html",
+    "Lead paragraph": "typography_lead_paragraph.html",
+    "Lead paragraph example": "typography_lead_paragraph_example.html",
+    "Legal text": "typography_legal_text.html",
+    "Links": "typography_links.html",
+    "Lists": "typography_lists.html",
+    "Paragraphs": "typography_paragraphs.html",
+    "Paragraphs example": "typography_paragraphs_example.html",
+    "Progressive disclosure": "typography_progressive_disclosure.html"
   }
 }
