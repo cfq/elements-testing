@@ -50,16 +50,16 @@
   },
 
   "Typography": {
-    "Headings": "typography_headings.html",
-    "Headings example": "typography_headings_example.html",
-    "Inset text": "typography_inset_text.html",
-    "Lead paragraph": "typography_lead_paragraph.html",
-    "Lead paragraph example": "typography_lead_paragraph_example.html",
-    "Legal text": "typography_legal_text.html",
-    "Links": "typography_links.html",
-    "Lists": "typography_lists.html",
-    "Paragraphs": "typography_paragraphs.html",
-    "Paragraphs example": "typography_paragraphs_example.html",
-    "Progressive disclosure": "typography_progressive_disclosure.html"
+    "Headings": "headings.html",
+    "Headings example": "headings_example.html",
+    "Inset text": "inset_text.html",
+    "Lead paragraph": "lead_paragraph.html",
+    "Lead paragraph example": "lead_paragraph_example.html",
+    "Legal text": "legal_text.html",
+    "Links": "links.html",
+    "Lists": "lists.html",
+    "Paragraphs": "paragraphs.html",
+    "Paragraphs example": "paragraphs_example.html",
+    "Progressive disclosure": "progressive_disclosure.html"
   }
 }
