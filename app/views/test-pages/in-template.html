@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div id="test-case">
+      {% include "snippets/" + group + "_" + testName + ".html" %}
+    </div>
+  </main>
+{% endblock %}

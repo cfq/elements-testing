@@ -8,5 +8,33 @@
   "Data": {
     "Data table": "table.html",
     "Numeric data table": "table_numeric.html"
+  },
+
+  "Form": {
+    "Native checkbox": "checkbox_native.html",
+    "Checkboxes": "checkboxes.html",
+    "Date": "date.html",
+    "Multiple errors": "error_multiple.html",
+    "Multiple errors with errors showing": "error_multiple_show_errors.html",
+    "Radio error": "error_radio.html",
+    "Radio showing errors": "error_radio_show_errors.html",
+    "File upload": "file_upload.html",
+    "File upload_error": "file_upload_error.html",
+    "Focus": "focus.html",
+    "Hint text": "hint_text.html",
+    "Input sizes": "input_sizes.html",
+    "Inset checkboxes": "inset_checkboxes.html",
+    "Inset radios": "inset_radios.html",
+    "Inset radios showing errors": "inset_radios_show_errors.html",
+    "Labels": "labels.html",
+    "Radio buttons": "radio_buttons.html",
+    "Radio buttons inline": "radio_buttons_inline.html",
+    "Radio inline (yes/no)": "radio_inline_yes_no.html",
+    "Select boxes": "select_boxes.html",
+    "Spacing": "spacing.html"
+  },
+
+  "Layout": {
+
   }
 }

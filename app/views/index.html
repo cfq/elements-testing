@@ -24,8 +24,20 @@
 
       <h2 class="heading-large">Tests</h2>
 
+      {% for group, tests in snippets %}
+        <h3 class="heading-medium">{{ group }}</h3>
+        <ul>
+          {% for testname, testpath in tests %}
+            <li>
+              {{ testname }}: 
+              <a href="/test/{{ group | lower }}/{{ testpath | replace('.html', '') }}"> single</a>,
+              <a href="/test/{{ group | lower }}/{{ testpath | replace('.html', '') }}/template">in template</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+
       <ul>
-        <li><a href="/form-elements">Form elements</a></li>
       </ul>
 
     </div>

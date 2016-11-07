@@ -1,0 +1,5 @@
+{% extends "isolated-layout.html" %}
+
+{% block testcase %}
+  {% include "snippets/" + group + "_" + testName + ".html" %}
+{% endblock %}
