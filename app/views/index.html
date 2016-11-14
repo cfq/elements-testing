@@ -11,7 +11,7 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">
-        The GOV.UK prototype kit
+        The GOV.UK Elements accessibility testing
         <span class="heading-secondary">{{releaseVersion}}</span>
       </h1>{{releaseVersion | log }}
 
@@ -22,7 +22,10 @@
         <li>govuk_template_jinja: 0.19.0</li>
       </ul>
 
-      <h2 class="heading-large">Tests</h2>
+      <h2 class="heading-large">All elements</h2>
+      <a href="/test/all">All elements on a page</a>
+
+      <h2 class="heading-large">Individual tests</h2>
 
       {% for group, tests in snippets %}
         <h3 class="heading-medium">{{ group }}</h3>
