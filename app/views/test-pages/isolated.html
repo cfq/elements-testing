@@ -4,6 +4,10 @@
 Elements test case - {{testName}}
 {% endblock %}
 
+{% block body_classes %} 
+isolated-case
+{% endblock %}
+
 {% block testcase %}
   {% include "snippets/" + group + "_" + testName + ".html" %}
 {% endblock %}
