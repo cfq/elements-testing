@@ -8,6 +8,11 @@ Elements test case - {{testName}}
 isolated-case
 {% endblock %}
 
+{% block testcase_classes %} 
+isolated-case {{group}}-{{testName}}
+{% endblock %}
+
+
 {% block testcase %}
   {% include "snippets/" + group + "_" + testName + ".html" %}
 {% endblock %}
