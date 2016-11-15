@@ -37,3 +37,40 @@ $path: "/public/images/";
     padding-bottom: 1em;
   }
 }
+
+.all-cases  {
+  .test-case, h2 {
+    margin-bottom: 120px;
+  }
+
+  h3 {
+    margin-bottom: 30px;
+  }
+  
+}
+
+html.isolated {
+  background: white;
+}
+
+.example {
+  @extend %contain-floats;
+}
+
+.case-layout-grid p,
+.case-layout-grid_full p,
+.case-layout-grid_halves p,
+.case-layout-grid_quarters p,
+.case-layout-grid_thirds p,
+.case-layout-grid_thirds_one_third_two_thirds p,
+.case-layout-grid_thirds_two_thirds_one_third p {
+  width: 100%;
+  background: file-url("examples/grid.png") 0 0 repeat;
+  margin-bottom: 0;
+  height: 30px;
+  @include media(tablet) {
+    height: 60px;
+  }
+  overflow: hidden;
+  text-indent: -999em;
+}

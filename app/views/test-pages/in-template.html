@@ -1,8 +1,16 @@
 {% extends "layout.html" %}
 
+{% block page_title %} 
+Elements test case - {{testName}}
+{% endblock %}
+
+{% block body_classes %} 
+templated-case
+{% endblock %}
+
 {% block content %}
   <main id="content" role="main">
-    <div id="test-case">
+    <div id="test-case" class="templated-case case-{{group}}-{{testName}}">
       {% include "snippets/" + group + "_" + testName + ".html" %}
     </div>
   </main>

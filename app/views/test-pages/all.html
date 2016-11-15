@@ -1,0 +1,38 @@
+{% extends "isolated-layout.html" %}
+
+{% block page_title %} 
+Elements test case - all patterns
+{% endblock %}
+
+{% block body_classes %} 
+all-cases
+{% endblock %}
+
+{% block testcase %}
+
+<a class="link-back" href="/">Back</a>
+<h1 class="heading-large">All test cases</h1>
+
+{% for group, tests in snippets %}
+  <div class="form-group">
+      <h2 class="heading-medium">{{ group }}</h2>
+  </div>
+
+    {% for testname, testpath in tests %}
+
+      {% set group = group | lower | replace(' ', '_') %}
+
+      {% set path = "snippets/" + group + "_" + testpath %}
+
+      {% set type = testname.split(':')%}
+      {% set type = type[0] | lower | replace(' ', '_') %}
+        <h3>{{group}} {{type}}</h3>
+        <div class="form-group test-case example case-{{group}}-{{type}}">
+          {% include path %}
+        </div>
+    {% endfor %}
+
+{% endfor %}
+
+{% endblock %}
+

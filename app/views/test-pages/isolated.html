@@ -1,5 +1,18 @@
 {% extends "isolated-layout.html" %}
 
+{% block page_title %} 
+Elements test case - {{testName}}
+{% endblock %}
+
+{% block body_classes %} 
+isolated-case
+{% endblock %}
+
+{% block testcase_classes %} 
+isolated-case case-{{group}}-{{testName}}
+{% endblock %}
+
+
 {% block testcase %}
   {% include "snippets/" + group + "_" + testName + ".html" %}
 {% endblock %}

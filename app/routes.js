@@ -6,6 +6,11 @@ router.get('/', function (req, res) {
   res.render('index', {snippets: require('./snippets.json')})
 })
 
+// All elements on a single page
+router.get('/test/all', function (req, res) {
+  res.render('test-pages/all', {snippets: require('./snippets.json')})
+})
+
 router.get('/test/:group/:testName/:type?', function (req, res){
   var {group, testName, type="isolated"} = req.params;
 
