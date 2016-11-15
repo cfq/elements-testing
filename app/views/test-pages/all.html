@@ -14,7 +14,9 @@ all-cases
 <h1 class="heading-large">All test cases</h1>
 
 {% for group, tests in snippets %}
-  <h2 class="heading-medium">{{ group }}</h2>
+  <div class="form-group">
+      <h2 class="heading-medium">{{ group }}</h2>
+  </div>
 
     {% for testname, testpath in tests %}
 
@@ -23,9 +25,9 @@ all-cases
       {% set path = "snippets/" + group + "_" + testpath %}
 
       {% set type = testname.split(':')%}
-      {% set type = type[0] | lower %}
-
-        <div class="form-group test-case example {{group}}-{{type}}">
+      {% set type = type[0] | lower | replace(' ', '_') %}
+        <h3>{{group}} {{type}}</h3>
+        <div class="form-group test-case example case-{{group}}-{{type}}">
           {% include path %}
         </div>
     {% endfor %}

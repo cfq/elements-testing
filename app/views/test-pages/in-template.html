@@ -10,7 +10,7 @@ templated-case
 
 {% block content %}
   <main id="content" role="main">
-    <div id="test-case" class="templated-case {{group}}-{{testName}}">
+    <div id="test-case" class="templated-case case-{{group}}-{{testName}}">
       {% include "snippets/" + group + "_" + testName + ".html" %}
     </div>
   </main>
