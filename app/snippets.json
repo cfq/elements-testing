@@ -29,7 +29,7 @@
     "Labels": "labels.html",
     "Radio buttons": "radio_buttons.html",
     "Radio buttons inline": "radio_buttons_inline.html",
-    "Radio inline (yes/no)": "radio_inline_yes_no.html",
+    "Radio inline (revealing conditional)": "radio_inline_yes_no.html",
     "Select boxes": "select_boxes.html",
     "Spacing": "spacing.html"
   },
