@@ -3,12 +3,18 @@ var router = express.Router()
 
 // Route index page
 router.get('/', function (req, res) {
-  res.render('index', {snippets: require('./snippets.json')})
+  res.render('index', {
+    snippets: require('./snippets.json'),
+    examples: require('./examples.json')
+  })
 })
 
 // All elements on a single page
 router.get('/test/all', function (req, res) {
-  res.render('test-pages/all', {snippets: require('./snippets.json')})
+  res.render('test-pages/all', {
+    snippets: require('./snippets.json'),
+    examples: require('./examples.json')
+  })
 })
 
 router.get('/test/:group/:testName/:type?', function (req, res){

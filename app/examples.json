@@ -1,0 +1,11 @@
+{
+  "Radio errors example page": {
+    "from": "error_radio.html",
+    "to": "error_radio.html"
+  },
+
+  "File upload": {
+    "from": "file_upload.html",
+    "to": "file_upload_error.html"
+  }
+}

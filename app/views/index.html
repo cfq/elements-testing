@@ -40,7 +40,15 @@
         </ul>
       {% endfor %}
 
+      <h2 class="heading-large">Example pages</h2>
+
       <ul>
+      {% for exname, extest in examples %}
+        <li>
+          {{ exname }}
+
+        </li>
+      {% endfor %}
       </ul>
 
     </div>
