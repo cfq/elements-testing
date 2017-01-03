@@ -6,7 +6,7 @@ var _ = require('lodash')
 var snippets = require('./snippets.json')
 var examples = require('./examples.json')
 
-var snippetMap = _.reduce(_.values(snippets), function (a, b){ return _.merge(a, b) });
+// var snippetMap = _.reduce(_.values(snippets), function (a, b){ return _.merge(a, b) });
 
 // Route index page
 router.get('/', function (req, res) {
