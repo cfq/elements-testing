@@ -43,10 +43,11 @@
       <h2 class="heading-large">Example pages</h2>
 
       <ul>
-      {% for exname, extest in examples %}
+      {% for exname, exobj in examples %}
         <li>
-          {{ exname }}
-
+          <a href="/example/{{ exobj.slug }}">
+            {{ exname }}
+          </a>
         </li>
       {% endfor %}
       </ul>

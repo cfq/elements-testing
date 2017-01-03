@@ -10,8 +10,14 @@ templated-case
 
 {% block content %}
   <main id="content" role="main">
+  {% if slug %}
+    <form action={{ "/example/" + slug + "/template" }} method="post">
+  {% endif %}
     <div id="test-case" class="templated-case case-{{group}}-{{testName}}">
       {% include "snippets/" + group + "_" + testName + ".html" %}
     </div>
+  {% if slug %}
+    </form>
+  {% endif %}
   </main>
 {% endblock %}

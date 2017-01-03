@@ -1,11 +1,15 @@
 {
   "Radio errors example page": {
-    "from": "error_radio.html",
-    "to": "error_radio.html"
+    "slug": "radio-errors",
+    "group": "form",
+    "from": "error_radio",
+    "to": "error_radio_show_errors"
   },
 
   "File upload": {
-    "from": "file_upload.html",
-    "to": "file_upload_error.html"
+    "slug": "file-upload",
+    "group": "form",
+    "from": "file_upload",
+    "to": "file_upload_error"
   }
 }
