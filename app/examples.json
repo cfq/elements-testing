@@ -6,10 +6,10 @@
     "to": "error_radio_show_errors"
   },
 
-  "File upload": {
-    "slug": "file-upload",
+  "Multiple errors": {
+    "slug": "multiple-errors",
     "group": "form",
-    "from": "file_upload",
-    "to": "file_upload_error"
+    "from": "error_multiple",
+    "to": "error_multiple_show_errors"
   }
 }
