@@ -11,5 +11,21 @@
     "group": "form",
     "from": "error_multiple",
     "to": "error_multiple_show_errors"
+  },
+
+  "Focus styles": {
+    "slug": "focus",
+    "group": "form",
+    "submit": "true",
+    "from": "focus",
+    "to": "focus"
+  },
+
+  "Hint text": {
+    "slug": "hint-text",
+    "group": "form",
+    "submit": "true",
+    "from": "hint_text",
+    "to": "hint_text"
   }
 }

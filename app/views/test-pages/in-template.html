@@ -16,6 +16,9 @@ templated-case
     <div id="test-case" class="templated-case case-{{group}}-{{testName}}">
       {% include "snippets/" + group + "_" + testName + ".html" %}
     </div>
+  {% if submit %}
+    <input class="button" type="submit" value="Continue">
+  {% endif %}
   {% if slug %}
     </form>
   {% endif %}

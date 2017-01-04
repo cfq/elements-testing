@@ -30,7 +30,7 @@ router.get('/test/:group/:testName/:type?', function (req, res){
   var template = type == 'isolated' ? 'test-pages/isolated' : 'test-pages/in-template';
 
   res.render(template, {
-    group: group, 
+    group: group,
     testName: testName
   });
 })
@@ -46,7 +46,8 @@ router.get('/example/:exampleName/:type?', function (req, res){
       type: type,
       group: example.group,
       testName: example.from,
-      slug: example.slug
+      slug: example.slug,
+      submit: example.submit
     })
   }
 })
@@ -61,7 +62,8 @@ router.post('/example/:exampleName/:type?', function (req, res){
     res.render( template, {
       group: example.group,
       testName: example.to,
-      slug: example.slug
+      slug: example.slug,
+      submit: example.submit
     })
   }
 
