@@ -27,5 +27,29 @@
     "submit": "true",
     "from": "hint_text",
     "to": "hint_text"
+  },
+
+  "Input sizes": {
+    "slug": "input-sizes",
+    "group": "form",
+    "submit": "true",
+    "from": "input_sizes",
+    "to": "input_sizes"
+  },
+
+  "Inset checkboxes": {
+    "slug": "inset-checkboxes",
+    "group": "form",
+    "submit": "true",
+    "from": "inset_checkboxes",
+    "to": "inset_checkboxes"
+  },
+
+  "Inset radios": {
+    "slug": "inset-radios",
+    "group": "form",
+    "submit": "true",
+    "from": "inset_radios",
+    "to": "inset_radios_show_errors"
   }
 }
