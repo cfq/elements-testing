@@ -14,5 +14,11 @@ isolated-case case-{{group}}-{{testName}}
 
 
 {% block testcase %}
+  {% if slug %}
+    <form action={{ "/example/" + slug + "/template" }} method="post">
+  {% endif %}
   {% include "snippets/" + group + "_" + testName + ".html" %}
+  {% if slug %}
+    </form>
+  {% endif %}
 {% endblock %}
