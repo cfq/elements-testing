@@ -57,14 +57,21 @@ router.post('/example/:exampleName/:type?', function (req, res){
 
   var example = _.filter(examples, {'slug': exampleName})[0]
   var template = type == 'isolated' ? 'test-pages/isolated' : 'test-pages/in-template';
+  var is_multiple_error_page = req.body.fullName && req.body.niNo
+  var pass = _.reduce(_.map( req.body, x => !!x ), function (a,b){ return a && b; })
+  var error = is_multiple_error_page ? !pass : true
 
-  if( !!example ){
-    res.render( template, {
+  var view_params = _.merge({
       group: example.group,
       testName: example.to,
       slug: example.slug,
-      submit: example.submit
-    })
+      submit: example.submit,
+      error: error,
+      posted: true
+    }, req.body)
+
+  if( !!example ){
+    res.render( template, view_params )
   }
 
 })

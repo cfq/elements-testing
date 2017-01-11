@@ -1,3 +1,21 @@
+{% if posted and not error %}
+
+<h1 class="heading-large">
+  Your personal details
+</h1>
+
+<div class="govuk-box-highlight">
+  <h2 class="bold-large">
+    Details successfully submitted
+  </h2>
+  <p>
+    Your reference number is <br>
+    <strong class="heading-medium">HDJ2123F</strong>
+  </p>
+</div>
+
+{% else %}
+
 {% if error %}
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
 
@@ -66,3 +84,6 @@
 </div>
 
 <input class="button" type="submit" value="Continue">
+
+{% endif %}
+

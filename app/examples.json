@@ -6,7 +6,7 @@
     "to": "error_radio_show_errors"
   },
 
-  "Multiple errors, focus style and hint text": {
+  "Multiple errors, focus style, hint text and confirmation page": {
     "slug": "multiple-errors",
     "group": "form",
     "from": "error_multiple",
