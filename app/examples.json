@@ -3,7 +3,7 @@
     "slug": "radio-errors",
     "group": "form",
     "from": "error_radio",
-    "to": "error_radio_show_errors"
+    "to": "error_radio"
   },
 
   "Multiple errors, focus style, hint text and confirmation page": {
