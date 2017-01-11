@@ -29,19 +29,11 @@
     "to": "inset_checkboxes"
   },
 
-  "Inset radios": {
+  "Inset radios, successive errors": {
     "slug": "inset-radios",
     "group": "form",
     "submit": "true",
     "from": "inset_radios",
-    "to": "inset_radios_show_errors"
-  },
-
-  "Inset radios (alternative error)": {
-    "slug": "inset-radios2",
-    "group": "form",
-    "submit": "true",
-    "from": "inset_radios2",
-    "to": "inset_radios_show_errors2"
+    "to": "inset_radios"
   }
 }

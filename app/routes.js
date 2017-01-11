@@ -60,6 +60,7 @@ router.post('/example/:exampleName/:type?', function (req, res){
   var is_multiple_error_page = req.body.fullName && req.body.niNo
   var pass = _.reduce(_.map( req.body, x => !!x ), function (a,b){ return a && b; })
   var error = is_multiple_error_page ? !pass : true
+  var is_inset_radio_page = !!req.body.radio_contact_group
 
   var view_params = _.merge({
       group: example.group,
@@ -67,6 +68,7 @@ router.post('/example/:exampleName/:type?', function (req, res){
       slug: example.slug,
       submit: example.submit,
       error: error,
+      error2: is_inset_radio_page,
       posted: true
     }, req.body)
 
