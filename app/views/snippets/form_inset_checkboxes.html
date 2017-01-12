@@ -1,3 +1,21 @@
+{% if error %}
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#{% if error %}example-different-country{% endif %}">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+{% endif %}
+
 <h1 class="heading-medium">
   What is your nationality?
 </h1>
@@ -19,13 +37,21 @@
       Irish
     </label>
     <label class="block-label" for="nationalities-other" data-target="example-different-country">
-      <input id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country">
+      <input id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country" {% if error %}checked="checked"{% endif %}>
       Citizen of a different country
     </label>
-    <div class="panel panel-border-narrow js-hidden" id="example-different-country">
-      <label class="form-label" for="nationalities-other-country">Country name</label>
-      <input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+    <div class="panel panel-border-narrow {% if error %}panel-with-error{% else %}js-hidden {% endif %}" id="example-different-country">
+      <div class="{% if error %}form-group error{% endif %}">
+        <label class="form-label" for="nationalities-other-country">
+          Country name
+          {% if error %}
+            <span class="error-message">
+              Enter the name of your country
+            </span>
+          {% endif %}
+        </label>
+        <input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+      </div>
     </div>
-
   </fieldset>
 </div>
