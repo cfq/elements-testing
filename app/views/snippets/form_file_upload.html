@@ -1,6 +1,11 @@
-<div class="form-group">
+<div class="form-group {% if error %}error{% endif %}">
   <label class="form-label" for="file-input">
-    Upload a file
+    Photo of your document
+    {% if error %}
+    <span class="error-message">
+      Upload the file
+    </span>
+    {% endif %}
   </label>
   <input type="file" id="file-input">
 </div>

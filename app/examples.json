@@ -35,5 +35,13 @@
     "submit": "true",
     "from": "inset_radios",
     "to": "inset_radios"
+  },
+
+  "File upload and select box": {
+    "slug": "file-upload",
+    "group": "form",
+    "submit": "true",
+    "from": "file_upload_select",
+    "to": "file_upload_select"
   }
 }

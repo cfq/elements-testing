@@ -1,0 +1,22 @@
+
+{% if error %}
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+    There was a problem
+  </h1>
+
+  <ul class="error-summary-list">
+    <li><a href="#file-input">File missing</a></li>
+  </ul>
+
+</div>
+{% endif %}
+
+<h1 class="heading-large">
+  Send the required document
+</h1>
+
+{% include "snippets/form_select_boxes.html" %}
+
+{% include "snippets/form_file_upload.html" %}
