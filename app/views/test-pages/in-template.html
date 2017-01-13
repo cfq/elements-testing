@@ -10,7 +10,7 @@ templated-case
 
 {% block content %}
   <main id="content" role="main">
-  {% if slug %}
+  {% if group == "form" %}
     <form action={{ "/example/" + slug + "/template" }} method="post">
   {% endif %}
     <div id="test-case" class="templated-case case-{{group}}-{{testName}}">
@@ -19,7 +19,7 @@ templated-case
   {% if submit %}
     <input class="button" type="submit" value="Continue">
   {% endif %}
-  {% if slug %}
+  {% if group == "form" %}
     </form>
   {% endif %}
   </main>
