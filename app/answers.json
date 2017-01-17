@@ -1,0 +1,13 @@
+{
+  "Your personal details": {
+    "Name": "John Smith",
+    "National Insurance Number": "AB123456C",
+    "Address": "123 Example Drive<br />Flat 4c<br />SW1 2AB London",
+    "Previous address": "I have not moved in the last 12 months",
+    "Contact details": "020 1234 5678<br />john.smith@gmail.com"
+  },
+  "Your application details": {
+    "Application for": "Machine that goes ping",
+    "Reason": "It's a long story... I was walking down the street and then this guy came up to me and he did this thing and then I had to go and visit my Mum and then it all went downhill."
+  }
+}

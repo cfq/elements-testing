@@ -5,6 +5,7 @@ var _ = require('lodash')
 
 var snippets = require('./snippets.json')
 var examples = require('./examples.json')
+var answers = require('./answers.json')
 
 // var snippetMap = _.reduce(_.values(snippets), function (a, b){ return _.merge(a, b) });
 
@@ -13,6 +14,15 @@ router.get('/', function (req, res) {
   res.render('index', {
     snippets: snippets,
     examples: examples
+  })
+})
+
+router.get('/check-your-answers/:variant?', function (req, res) {
+  var { variant = 'index' } = req.params;
+  var template = 'check-your-answers/' + variant;
+
+  res.render(template, {
+    answers: answers
   })
 })
 

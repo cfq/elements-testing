@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-large">
+      Check your answers before sending your application
+    </h1>
+
+    {% for section, answersobj in answers %}
+
+      <h2 class="heading-medium">
+        {{ section }}
+      </h2>
+
+      <table class="check-your-answers variant-table">
+
+        <thead class="visuallyhidden">
+          <tr>
+            <th>We asked</th>
+            <th>You answered</th>
+            <th>Change your answer</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for question, answer in answersobj %}
+            <tr>
+              <th class="question">{{ question }}</th>
+              <td class="answer">{{ answer | safe }}</td>
+              <td class="change">
+                <a href="#">
+                  Change <span class="visuallyhidden">{{ question }}</span>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    {% endfor %}
+
+    {% include "check-your-answers/_confirm.html" %}
+
+  </div>
+</main>
+
+{% endblock %}
