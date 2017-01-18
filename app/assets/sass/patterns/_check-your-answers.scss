@@ -49,6 +49,10 @@
     padding-right: 0;
   }
 
+  caption {
+    text-align: left;
+  }
+
   @include media(mobile) {
     table,
     thead,
