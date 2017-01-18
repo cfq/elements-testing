@@ -23,16 +23,16 @@
 
         <thead class="visuallyhidden">
           <tr>
-            <th>We asked</th>
+            <th>We asked for</th>
             <th>You answered</th>
-            <th>Change your answer</th>
+            <th>Is that correct?</th>
           </tr>
         </thead>
 
         <tbody>
           {% for question, answer in answersobj %}
             <tr>
-              <th class="question">{{ question }}</th>
+              <td class="question">{{ question }}</td>
               <td class="answer">{{ answer | safe }}</td>
               <td class="change">
                 <a href="#">
