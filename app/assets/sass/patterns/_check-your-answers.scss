@@ -189,8 +189,21 @@
       padding-bottom: 0;
     }
 
+    dd {
+      padding-left: 0;
+      padding-top: 0;
+    }
+
+    .answer-container {
+      position: relative;
+    }
+
     .change {
-      float: right;
+      // float: right;
+
+      position: absolute;
+      top: -20px; // todo: explain magic number
+      right: 0;
     }
   }
 
