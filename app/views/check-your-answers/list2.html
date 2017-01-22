@@ -21,19 +21,17 @@
       <ol class="check-your-answers variant-ol">
         {% for question, answer in answersobj %}
           <li>
-            <p class="question">
-              <strong>{{ question }}</strong><span class="visuallyhidden">:</span>
-            </p>
+            <strong class="question">
+              {{ question }}<span class="visuallyhidden">:</span>
+            </strong>
 
-            <p class="answer">
+            <span class="answer">
               {{ answer | safe }}
-            </p>
+            </span>
 
-            <p class="change">
-              <a href="#">
-                Change <span class="visuallyhidden">{{ question }}</span>
-              </a>
-            </p>
+            <a href="#" class="change">
+              Change <span class="visuallyhidden">{{ question }}</span>
+            </a>
           </li>
         {% endfor %}
       </ol>
