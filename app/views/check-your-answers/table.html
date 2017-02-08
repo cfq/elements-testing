@@ -7,44 +7,47 @@
 {% block content %}
 
 <main id="content" role="main">
-  <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-    <h1 class="heading-large">
-      Check your answers before sending your application
-    </h1>
+      <h1 class="heading-large">
+        Check your answers before sending your application (table)
+      </h1>
 
-    {% for section, answersobj in answers %}
+      {% for section, answersobj in answers %}
 
-      <table class="check-your-answers variant-table">
-        <caption class="heading-medium">{{ section }}</caption>
+        <table class="check-your-answers multiple-sections">
+          <caption class="heading-medium">{{ section }}</caption>
 
-        <thead class="visuallyhidden">
-          <tr>
-            <th>We asked for</th>
-            <th>You answered</th>
-            <th>Is that correct?</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {% for question, answer in answersobj %}
+          <thead class="visuallyhidden">
             <tr>
-              <td class="question">{{ question }}</td>
-              <td class="answer">{{ answer | safe }}</td>
-              <td class="change">
-                <a href="#">
-                  Change <span class="visuallyhidden">{{ question }}</span>
-                </a>
-              </td>
+              <th>We asked for</th>
+              <!-- question / answer -->
+              <th>You answered</th>
+              <th>Change your answer</th>
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          </thead>
 
-    {% endfor %}
+          <tbody>
+            {% for question, answer in answersobj %}
+              <tr>
+                <td class="question">{{ question }}</td>
+                <td class="answer">{{ answer | safe }}</td>
+                <td class="change">
+                  <a href="#">
+                    Change <span class="visuallyhidden">{{ question }}</span>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
 
-    {% include "check-your-answers/_confirm.html" %}
+      {% endfor %}
 
+      {% include "check-your-answers/_confirm.html" %}
+
+    </div>
   </div>
 </main>
 
