@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list variations
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Task list variants
+  </h1>
+
+  <p>
+    <a href="/patterns/task-list/table">Example using a table</a><br>
+    This pattern uses a table, in a similar way to the check-your-answers pattern.
+  </p>
+
+  <p>
+    <a href="/patterns/task-list/list">Example using Headings and lists</a><br>
+    This pattern uses heading levels <code class="code">&lt;h1&gt;</code> to <code class="code">&lt;h3&gt;</code> for the task section headings, and an ordered list for the task items.
+  </p>
+
+  <p>
+    <a href="/patterns/task-list/list-hide-section-numbers">Example using section</a>
+    This is (I believe) an anti-pattern as the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">sectioning algorithm isn't conveyed to AT</a>, is this the case? Here all headings are <code class="code">&lt;h1&gt;</code>s in a parent <code class="code">&lt;section&gt;</code> element.
+  </p>
+
+
+</main>
+
+{% endblock %}

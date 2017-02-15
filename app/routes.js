@@ -17,6 +17,13 @@ router.get('/', function (req, res) {
   })
 })
 
+router.get('/patterns/task-list/:variant?', function (req, res) {
+  var { variant = 'index' } = req.params;
+  var template = 'patterns/task-list/' + variant;
+
+  res.render(template)
+})
+
 router.get('/check-your-answers/:variant?', function (req, res) {
   var { variant = 'index' } = req.params;
   var template = 'check-your-answers/' + variant;
