@@ -1,0 +1,48 @@
+// Task list pattern
+
+.task-first {
+  margin-top: 3em;
+}
+
+.task-section {
+  @include bold-36;
+  padding-bottom: 0.25em;
+}
+
+.task-list {
+  border-top: 1px solid $border-colour;
+  margin-bottom: 3em;
+}
+
+.task-list-item {
+  border-bottom: 1px solid $border-colour;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  @extend %contain-floats;
+}
+
+.task-list-item td {
+  padding-right: 0;
+}
+
+.task-list-link {
+  float: left;
+}
+
+.task-list-status {
+  float: right;
+
+  @include inline-block;
+  margin-left: 8px;
+
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  @include bold-16($line-height: 20 / 16);
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: $white;
+  background-color: $govuk-blue;
+}
