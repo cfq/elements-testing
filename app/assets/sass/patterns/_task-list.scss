@@ -19,7 +19,7 @@
 
 .task-section {
   display: table;
-  @include bold-36;
+  @include bold-24;
   padding-bottom: 0.25em;
 }
 
@@ -36,7 +36,7 @@
 .task-list {
   margin-bottom: 3em;
   @include media(tablet) {
-    padding-left: 3em;
+    padding-left: 2em;
   }
 }
 
