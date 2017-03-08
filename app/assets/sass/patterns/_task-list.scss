@@ -1,17 +1,43 @@
 // Task list pattern
 
-.task-first {
+// Override column width for tablet and up
+.measure {
+  @include media(tablet) {
+    min-width: 600px;
+  }
+}
+
+.task-counter {
+  counter-reset: task;
+}
+
+.task {
   margin-top: 3em;
+  margin-bottom: 3em;
+  counter-increment: task;
 }
 
 .task-section {
-  @include bold-36;
+  display: table;
+  @include bold-24;
   padding-bottom: 0.25em;
 }
 
+.task-section::before {
+  content: counter(task) ".";
+  display: table-cell;
+  padding-right: 0.25em;
+  @include media(tablet) {
+    width: 1.5em;
+    padding-right: 0;
+  }
+}
+
 .task-list {
-  border-top: 1px solid $border-colour;
   margin-bottom: 3em;
+  @include media(tablet) {
+    padding-left: 2em;
+  }
 }
 
 .task-list-item {
@@ -21,17 +47,21 @@
   @extend %contain-floats;
 }
 
-.task-list-item td {
-  padding-right: 0;
+.task-list-item:first-child {
+  border-top: 1px solid $border-colour;
 }
 
-.task-list-link {
+.task-name {
+  width: 60%;
   float: left;
 }
 
-.task-list-status {
+.task-status {
   float: right;
+}
 
+.task-status-complete {
+  float: right;
   @include inline-block;
   margin-left: 8px;
 
