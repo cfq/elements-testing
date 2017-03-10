@@ -7,24 +7,19 @@
   }
 }
 
-.task-counter {
-  counter-reset: task;
-}
 
-.task {
+.task-list {
   margin-top: 3em;
-  margin-bottom: 3em;
-  counter-increment: task;
 }
 
-.task-section {
+
+.task-list-section {
   display: table;
   @include bold-24;
   padding-bottom: 0.25em;
 }
 
-.task-section::before {
-  content: counter(task) ".";
+.task-list-section-number {
   display: table-cell;
   padding-right: 0.25em;
   @include media(tablet) {
@@ -33,7 +28,8 @@
   }
 }
 
-.task-list {
+
+.task-list-items {
   margin-bottom: 3em;
   @include media(tablet) {
     padding-left: 2em;
@@ -51,16 +47,13 @@
   border-top: 1px solid $border-colour;
 }
 
+
 .task-name {
   width: 60%;
   float: left;
 }
 
-.task-status {
-  float: right;
-}
-
-.task-status-complete {
+.task-completed {
   float: right;
   @include inline-block;
   margin-left: 8px;
