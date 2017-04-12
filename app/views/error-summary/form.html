@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  {% if error and titlechange %}Error in:{% endif %} Your personal details - GOV.UK prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      {% if not summaryfirst %}
+        <h{{titlelevel}} class="heading-large">
+          {% if error and headingchange %}Error in:{% endif %} Your personal details (h{{titlelevel}})
+        </h{{titlelevel}}>
+      {% endif %}
+
+      {% if error %}
+        <div class="error-summary" aria-labelledby="error-summary-heading" tabindex="-1" role="{% if alert %}alert{% else %}group{% endif %}" id="feedback">
+
+          <h{{summarylevel}} class="heading-medium error-summary-heading" id="error-summary-heading">
+            There was a problem (h{{summarylevel}})
+          </h{{summarylevel}}>
+
+          <p>
+            Please revise your answers below.
+          </p>
+
+          <ul class="error-summary-list">
+            <li><a href="#example-full-name">Full name is empty</a></li>
+          </ul>
+
+        </div>
+      {% endif %}
+
+
+      {% if summaryfirst %}
+        <h{{titlelevel}} class="heading-large">
+          {% if error and headingchange %}Error in:{% endif %} Your personal details (h{{titlelevel}})
+        </h{{titlelevel}}>
+      {% endif %}
+
+
+      <form action="{% if anchor %}#feedback{% endif %}" method="post">
+        <div class="form-group {% if error %}form-group-error error{% endif %}">
+
+          <label for="example-full-name">
+
+            <span class="form-label-bold">Full name</span>
+            {% if error %}
+              <span class="error-message" id="error-message-full-name">Enter your full name</span>
+            {% endif %}
+
+          </label>
+
+          <input class="form-control {% if error %}form-control-error error{% endif %}" id="example-full-name" type="text" name="fullName" value="{{fullName}}">
+        </div>
+
+        <p><input class="button" type="submit" value="Continue" /></p>
+      </form>
+
+      <p><a href="/error-summary/index" class="link-back">Back to list of all variants</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -95,4 +95,79 @@ router.post('/example/:exampleName/:type?', function (req, res){
 
 })
 
+
+router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', function (req, res){
+  var {position='error-title', summarylevel='2', titlelevel='1', type=''} = req.params;
+  var alert, anchor, titlechange, headingchange = false;
+  var page = (position=='index') ? 'index' : 'form';
+  var template = 'error-summary/' + page;
+
+  switch (type) {
+    case 'a':
+      alert = true;
+      break;
+    case 'b':
+      anchor = true;
+      break;
+    case 'c':
+      alert = true;
+      anchor = true;
+      break;
+    case 'd':
+      titlechange = true;
+      break;
+    case 'e':
+      titlechange = true;
+      headingchange = true;
+      break;
+  }
+
+  res.render(template, {
+    error: false,
+    summaryfirst: (position == 'error-title'),
+    summarylevel: summarylevel,
+    titlelevel: titlelevel,
+    alert: alert,
+    anchor: anchor,
+    titlechange: titlechange,
+    headingchange: headingchange
+  })
+})
+
+router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', function (req, res){
+  var {position='error-title', summarylevel='2', titlelevel='1', type=''} = req.params;
+  var alert, anchor, titlechange, headingchange = false;
+
+  switch (type) {
+    case 'a':
+      alert = true;
+      break;
+    case 'b':
+      anchor = true;
+      break;
+    case 'c':
+      alert = true;
+      anchor = true;
+      break;
+    case 'd':
+      titlechange = true;
+      break;
+    case 'e':
+      titlechange = true;
+      headingchange = true;
+      break;
+  }
+
+  res.render('error-summary/form', {
+    error: true,
+    summaryfirst: (position == 'error-title'),
+    summarylevel: summarylevel,
+    titlelevel: titlelevel,
+    alert: alert,
+    anchor: anchor,
+    titlechange: titlechange,
+    headingchange: headingchange
+  })
+})
+
 module.exports = router
