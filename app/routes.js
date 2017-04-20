@@ -96,8 +96,8 @@ router.post('/example/:exampleName/:type?', function (req, res){
 })
 
 
-router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', function (req, res){
-  var {position='error-title', summarylevel='2', titlelevel='1', type=''} = req.params;
+router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
+  var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
   var alert, anchor, titlechange, headingchange = false;
   var page = (position=='index') ? 'index' : 'form';
   var template = 'error-summary/' + page;
@@ -130,12 +130,13 @@ router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', functi
     alert: alert,
     anchor: anchor,
     titlechange: titlechange,
-    headingchange: headingchange
+    headingchange: headingchange,
+    label: !label.length
   })
 })
 
-router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', function (req, res){
-  var {position='error-title', summarylevel='2', titlelevel='1', type=''} = req.params;
+router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
+  var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
   var alert, anchor, titlechange, headingchange = false;
 
   switch (type) {
@@ -166,7 +167,8 @@ router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?', funct
     alert: alert,
     anchor: anchor,
     titlechange: titlechange,
-    headingchange: headingchange
+    headingchange: headingchange,
+    label: !label.length
   })
 })
 
