@@ -172,4 +172,36 @@ router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?
   })
 })
 
+
+router.get('/form-test/:page?', function (req, res){
+  var { page = 'index' } = req.params;
+  var template = 'error-summary-ur/' + page;
+
+  res.render(template, {})
+})
+
+router.post('/form-test/:page?', function (req, res){
+  var is_tested_page = typeof req.body.referenceNumber !== 'undefined'
+
+  if (is_tested_page) {
+    var correct_ref_1 = 'ad019843b' // AD 01 98 43 B
+    var correct_ref_2 = '566683327897b' // 566683327897B
+    var ref = req.body.referenceNumber.replace(/\s/g,'').toLowerCase()
+    var error = !(ref == correct_ref_1 || ref == correct_ref_2)
+
+    if (error) {
+      var view_params = _.merge({
+        error: error
+      }, req.body)
+
+      res.render('error-summary-ur/reference-number', view_params)
+    } else {
+      res.redirect('thanks')
+    }
+
+  } else {
+    res.redirect('/form-test/reference-number')
+  }
+})
+
 module.exports = router

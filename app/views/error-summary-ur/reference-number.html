@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your reference number - GOV.UK prototype
+{% endblock %}
+
+{% set serviceName = 'Form test' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {% if error %}
+        <div class="error-summary" aria-labelledby="error-summary-heading" tabindex="-1" role="group" id="feedback">
+
+          <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+            There's a problem
+          </h2>
+
+          <p>
+            Please correct the error below.
+          </p>
+
+          <ul class="error-summary-list">
+            <li><a href="#example-reference-number">Your reference number is not correct</a></li>
+          </ul>
+
+        </div>
+      {% endif %}
+
+
+      <h1 class="heading-large">
+        What is your reference number?
+      </h1>
+
+
+      <form action="" method="post">
+        <div class="form-group {% if error %}form-group-error error{% endif %}">
+
+          <label for="example-reference-number">
+
+            <span class="visually-hidden">What is your reference number?</span>
+            <span class="form-hint">You can find this on the letter we sent you</span>
+            {% if error %}
+              <span class="error-message" id="error-message-reference-number">Your reference number is not correct</span>
+            {% endif %}
+
+          </label>
+
+          <input class="form-control {% if error %}form-control-error{% endif %}" id="example-reference-number" type="text" name="referenceNumber" value="{{referenceNumber}}">
+        </div>
+
+        <p><input class="button" type="submit" value="Continue" /></p>
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
