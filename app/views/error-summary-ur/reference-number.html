@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Your reference number - GOV.UK prototype
+  {% if error %}Error in: {% endif %}Your reference number - GOV.UK prototype
 {% endblock %}
 
 {% set serviceName = 'Form test' %}
