@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Do you already have an account? - GOV.UK prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {% if add_h1 %}
+        <h1 id="heading-name" class="heading-large {% if not show_h1 %}visually-hidden{% endif %}">
+          Do you already have an account?
+        </h1>
+      {% endif %}
+
+      <form>
+        <div class="form-group">
+          <fieldset class="inline" {% if not add_legend %}aria-labelledby="heading-name"{% endif %}>
+
+           {% if add_legend %}
+              <legend>
+                <span
+                  class="{% if not show_legend %}visually-hidden{% endif %}
+                  {% if not add_h1 or not show_h1 %}heading-large{% endif %}"
+                  {% if not add_h1 %}role="heading" aria-level="1"{% endif %}
+                  style="display: block;">{# just a quick hack as "heading-large" class is lacking it #}
+                  Do you already have an account?
+                </span>
+              </legend>
+            {% endif %}
+
+            <label class="block-label" for="radio-inline-1">
+              <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+              Yes
+            </label>
+            <label class="block-label" for="radio-inline-2">
+              <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+              No
+            </label>
+
+<!--
+            <div class="multiple-choice">
+              <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+              <label for="radio-inline-1">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+              <label for="radio-inline-2">No</label>
+            </div>
+ -->
+          </fieldset>
+        </div>
+
+        <p><input class="button" type="submit" value="Continue" /></p>
+      </form>
+
+      <p><a href="/legends-headings/index" class="link-back">Back to list of all variants</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -204,4 +204,39 @@ router.post('/form-test/:page?', function (req, res){
   }
 })
 
+
+router.get('/legends-headings/:page?/:type?/', function (req, res){
+  var { page = 'index', type = 'a' } = req.params;
+  var template = 'legends-headings/' + page;
+  var show_legend, show_h1, add_legend, add_h1;
+  show_legend = show_h1 = add_legend = add_h1 = true;
+
+  switch (type) {
+    case 'a':
+      show_legend = false;
+      break;
+    case 'b':
+      show_h1 = false;
+      break;
+    case 'c':
+      add_legend = false;
+      break;
+    case 'd':
+      add_h1 = false;
+      break;
+    case 'e':
+      break;
+  }
+
+  var view_params = _.merge({
+    show_legend: show_legend,
+    show_h1: show_h1,
+    add_legend: add_legend,
+    add_h1: add_h1
+  }, req.body)
+
+  res.render(template, view_params)
+})
+
+
 module.exports = router

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Duplicated legend/label and h1
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Duplicated legend/label and h1
+      </h1>
+
+
+      <h2 class="heading-medium">Our current solution (visually hidden legend/label)</h2>
+
+      <ul class="list list-bullet">
+        <li><a href="/legends-headings/radios">Radios with hidden legend</a></li>
+        <li><a href="/legends-headings/input">Input with hidden label</a></li>
+        <li><a href="/legends-headings/date">Date with hidden legend</a></li>
+      </ul>
+
+
+      <h2 class="heading-medium">Similar but reversed (visually hidden heading)</h2>
+
+      <ul class="list list-bullet">
+        <li><a href="/legends-headings/radios/b">Radios with hidden heading</a></li>
+        <li><a href="/legends-headings/input/b">Input with hidden heading</a></li>
+        <li><a href="/legends-headings/date/b">Date with hidden heading</a></li>
+      </ul>
+
+
+      <h2 class="heading-medium">Removed legend/label, using aria-labelledby instead</h2>
+
+      <ul class="list list-bullet">
+        <li><a href="/legends-headings/radios/c">Radios with removed legend</a></li>
+        <li><a href="/legends-headings/input/c">Input with removed label</a></li>
+        <li><a href="/legends-headings/date/c">Date with removed legend</a></li>
+      </ul>
+
+
+      <h2 class="heading-medium">Removed heading, using heading role instead</h2>
+
+      <ul class="list list-bullet">
+        <li><a href="/legends-headings/radios/d">Radios with removed heading</a></li>
+        <li><a href="/legends-headings/input/d">Input with removed heading</a></li>
+        <li><a href="/legends-headings/date/d">Date with removed heading</a></li>
+      </ul>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

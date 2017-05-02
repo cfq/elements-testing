@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What is your name? - GOV.UK prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {% if add_h1 %}
+        <h1 id="heading-name" class="heading-large {% if not show_h1 %}visually-hidden{% endif %}">
+          What is your date of birth?
+        </h1>
+      {% endif %}
+
+
+      <form action="" method="post">
+        <div class="form-group">
+          <fieldset {% if not add_legend %}aria-labelledby="heading-name"{% endif %}>
+
+            {% if add_legend %}
+              <legend>
+                <span
+                  class="{% if not show_legend %}visually-hidden{% endif %}
+                  {% if not add_h1 or not show_h1 %}heading-large{% endif %}"
+                  {% if not add_h1 %}role="heading" aria-level="1"{% endif %}
+                  style="display: block;">{# just a quick hack as "heading-large" class is lacking it #}
+                  What is your date of birth?
+                </span>
+              </legend>
+            {% endif %}
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dob-day">Day</label>
+                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+              </div>
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dob-month">Month</label>
+                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dob-year">Year</label>
+                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      <p><a href="/legends-headings/index" class="link-back">Back to list of all variants</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
