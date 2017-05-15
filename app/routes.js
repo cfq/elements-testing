@@ -208,23 +208,29 @@ router.post('/form-test/:page?', function (req, res){
 router.get('/legends-headings/:page?/:type?/', function (req, res){
   var { page = 'index', type = 'a' } = req.params;
   var template = 'legends-headings/' + page;
-  var show_legend, show_h1, add_legend, add_h1;
-  show_legend = show_h1 = add_legend = add_h1 = true;
+  var show_legend, show_h1, add_legend, add_h1, move_h1;
+  show_legend = show_h1 = add_legend = add_h1 = h1_top = true;
 
   switch (type) {
+    // hide legend
     case 'a':
       show_legend = false;
       break;
+    // hide heading
     case 'b':
       show_h1 = false;
       break;
+    // remove legend
     case 'c':
       add_legend = false;
       break;
+    // remove heading
     case 'd':
       add_h1 = false;
       break;
+    // move heading into legend
     case 'e':
+      h1_top = false;
       break;
   }
 
@@ -232,7 +238,8 @@ router.get('/legends-headings/:page?/:type?/', function (req, res){
     show_legend: show_legend,
     show_h1: show_h1,
     add_legend: add_legend,
-    add_h1: add_h1
+    add_h1: add_h1,
+    h1_top: h1_top
   }, req.body)
 
   res.render(template, view_params)

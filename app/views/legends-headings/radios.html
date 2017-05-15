@@ -10,7 +10,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      {% if add_h1 %}
+      {% if add_h1 and h1_top %}
         <h1 id="heading-name" class="heading-large {% if not show_h1 %}visually-hidden{% endif %}">
           Do you already have an account?
         </h1>
@@ -20,15 +20,19 @@
         <div class="form-group">
           <fieldset class="inline" {% if not add_legend %}aria-labelledby="heading-name"{% endif %}>
 
-           {% if add_legend %}
+            {% if add_legend %}
               <legend>
-                <span
-                  class="{% if not show_legend %}visually-hidden{% endif %}
-                  {% if not add_h1 or not show_h1 %}heading-large{% endif %}"
-                  {% if not add_h1 %}role="heading" aria-level="1"{% endif %}
-                  style="display: block;">{# just a quick hack as "heading-large" class is lacking it #}
-                  Do you already have an account?
-                </span>
+                {% if not h1_top %}
+                  <h1 class="heading-large">Do you already have an account?</h1>
+                {% else %}
+                  <span
+                    class="{% if not show_legend %}visually-hidden{% endif %}
+                    {% if not add_h1 or not show_h1 %}heading-large{% endif %}"
+                    {% if not add_h1 %}role="heading" aria-level="1"{% endif %}
+                    style="display: block;">{# just a quick hack as "heading-large" class is lacking it #}
+                    Do you already have an account?
+                  </span>
+              {% endif %}
               </legend>
             {% endif %}
 
