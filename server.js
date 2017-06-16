@@ -123,7 +123,7 @@ app.use(function (req, res, next) {
 
 app.get('/robots.txt', function (req, res) {
   res.type('text/plain')
-  res.send('User-agent: *\nDisallow: /')
+  res.send('User-agent: PowerMapper\nAllow: /\n\nUser-agent: *\nDisallow: /\n')
 })
 
 // Redirect root to /docs when in promo mode.
