@@ -1,0 +1,43 @@
+<h1 class="heading-medium">
+  Your contact preference
+</h1>
+
+<div class="form-group">
+  <fieldset>
+
+    <legend id="example-personal-details">
+      How do you want to be contacted?
+    </legend>
+
+    <label class="block-label" data-target="contact-by-email" for="example-contact-by-email">
+      <input id="example-contact-by-email" type="radio" name="radio_contact_group" value="email">
+      Email
+    </label>
+    <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+      <p>Email is preferred.</p>
+      <p><input type="submit" value="Submit" /></p>
+    </div>
+
+    <label class="block-label" data-target="contact-by-phone" for="example-contact-by-phone">
+      <input id="example-contact-by-phone" type="radio" name="radio_contact_group" value="phone">
+      Phone
+    </label>
+    <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+      <p>Phone is so 20th century.</p>
+      <p><input type="submit" value="Submit" /></p>
+    </div>
+
+    <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
+      <input id="example-contact-by-text" type="radio" name="radio_contact_group" value="text">
+      Text message
+    </label>
+    <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+      <div class="">
+        <label class="form-label" for="contact_text_message">
+          Mobile phone number
+        </label>
+        <input class="form-control" name="contact_text_message" type="text" id="contact_text_message">
+      </div>
+    </div>
+  </fieldset>
+</div>

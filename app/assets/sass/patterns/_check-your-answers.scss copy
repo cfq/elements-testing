@@ -1,0 +1,326 @@
+// .check-your-answers {
+
+//   td {
+//     @include core-19;
+//     vertical-align: top;
+//   }
+
+//   .change-answer {
+//     text-align: right;
+//     font-weight: bold;
+//     padding-right: 0;
+//   }
+
+// }
+
+
+
+// input {
+//   outline: 1px solid transparent; // or 3px because of :focus?
+// }
+
+// .button {
+//   background: none;
+// }
+
+.check-your-answers {
+  .question {
+    color: $grey-1; // passes AA, fails AAA
+  }
+
+  .answer {
+
+  }
+
+  .change {
+  }
+}
+
+/************ table ************/
+
+table.check-your-answers {
+  td,
+  th {
+    vertical-align: top;
+  }
+  tbody th {
+    font-weight: normal;
+  }
+
+  .question {
+    width: 30%;
+  }
+
+  .answer {
+    width: 63%;
+  }
+
+  .change {
+    text-align: right;
+    width: 7%;
+    padding-right: 0;
+  }
+
+  caption {
+    text-align: left;
+  }
+
+  @include media(mobile) {
+    table,
+    thead,
+    tbody,
+    caption,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+
+    tr {
+      border-bottom: 1px solid $border-colour;
+      position: relative;
+    }
+
+    td,
+    th {
+      border-width: 0;
+      width: auto !important;
+    }
+
+    .question {
+      padding-bottom: 0;
+    }
+
+    .answer {
+      padding-top: 0;
+    }
+
+    .change {
+      // float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+  }
+
+}
+
+
+/************ description list ************/
+
+dl.check-your-answers {
+  @extend %grid-row;
+  margin: 0;
+  padding: 0;
+
+  dt {
+    @include grid-column( 1/3 );
+    clear: left;
+  }
+
+  dd {
+    @include grid-column( 2/3 );
+  }
+
+  border-bottom: 1px solid $border-colour;
+
+  dt,
+  dd {
+    box-sizing: border-box;
+    padding: $gutter/2;
+    border-top: 1px solid $border-colour;
+  }
+  dt {
+    padding-left: 0;
+  }
+  dd {
+    padding-right: 0;
+    position: relative;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .answer-container {
+
+    .answer {
+      float: left;
+    }
+
+    .change {
+      float: right;
+    }
+  }
+
+  @include media(mobile) {
+    &,
+    dt,
+    dd,
+    .answer-container,
+    .answer,
+    .change {
+      display: block;
+    }
+
+    position: relative;
+
+    dt {
+      border-bottom-width: 0;
+      padding-bottom: 0;
+      clear: both;
+    }
+
+    dd {
+      padding-left: 0;
+      padding-top: 0;
+      padding-bottom: $gutter/2;
+      border-top-width: 0;
+      // @extend %contain-floats; // doesn't work for some reason?
+    }
+
+    .answer-container {
+      position: relative;
+    }
+
+    .answer-container:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .change {
+      // float: right;
+
+      position: absolute;
+      top: -20px; // todo: explain magic number
+      right: 0;
+    }
+  }
+
+}
+
+/************ ordered list ************/
+
+// ol.check-your-answers {
+
+//   li {
+//     @extend %grid-row;
+//     border-bottom: 1px solid $border-colour;
+//     padding: $gutter/2 0;
+//     margin: 0;
+//   }
+
+//   p {
+//     margin: 0;
+//   }
+
+//   .question {
+//     @include grid-column( 1/4 );
+//     clear: left;
+//     margin: 0;
+//     padding-left: 0;
+//     display: block;
+//   }
+
+//   .answer {
+//     @include grid-column( 1/2 );
+//   }
+
+//   .change {
+//     @include grid-column( 1/4 );
+//     text-align: right;
+//     padding-right: 0;
+//   }
+
+
+//   @include media(mobile) {
+
+//     li {
+//       position: relative;
+//     }
+
+//     .question,
+//     .answer,
+//     .change {
+//       float: none;
+//       width: auto;
+//       margin: 0;
+//       padding: 0;
+//     }
+
+//     .question {
+//       margin-bottom: $gutter/2;
+//     }
+
+//     .change {
+//       position: absolute;
+//       top: $gutter/2;
+//       right: 0;
+//     }
+//   }
+
+// }
+
+
+ol.check-your-answers {
+  display: table;
+
+  li {
+    margin: 0;
+    display: table-row;
+
+    > * {
+      display: table-cell;
+      border-bottom: 1px solid $border-colour;
+      padding: $gutter/2 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .question {
+    margin: 0;
+    padding-left: 0;
+    width: 30%;
+  }
+
+  .answer {
+  }
+
+  .change {
+    text-align: right;
+    padding-right: 0;
+  }
+
+
+  @include media(mobile) {
+
+    li {
+      position: relative;
+    }
+
+    .question,
+    .answer,
+    .change {
+      float: none;
+      width: auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    .question {
+      margin-bottom: $gutter/2;
+    }
+
+    .change {
+      position: absolute;
+      top: $gutter/2;
+      right: 0;
+    }
+  }
+
+}
