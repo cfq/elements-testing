@@ -21,11 +21,17 @@
         <div class="form-group">
 
         {% if add_legend %}
-          <label for="example-name">
+          {% if not h1_top %}
+            <h1>
+              <label for="example-name">
+                <span class="heading-large" style="display: block;">
+                  What is your name?
+                </span>
+              </label>
+            </h1>
 
-            {% if not h1_top %}
-              <h1 class="heading-large">What is your name?</h1>
-            {% else %}
+          {% else %}
+            <label for="example-name">
               <span
                 class="{% if not show_legend %}visually-hidden{% endif %}
                 {% if not add_h1 or not show_h1 %}heading-large{% endif %}"
@@ -33,9 +39,9 @@
                 style="display: block;">{# just a quick hack as "heading-large" class is lacking it #}
                 What is your name?
               </span>
-            {% endif %}
+            </label>
+          {% endif %}
 
-          </label>
         {% endif %}
 
           <input {% if not add_legend %}aria-labelledby="heading-name"{% endif %}
