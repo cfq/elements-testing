@@ -6,6 +6,11 @@ $path: "/public/images/";
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
 
+// Hack to let legends or elements within legends have margins in webkit browsers
+legend {
+  overflow: hidden;
+}
+
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
 @import 'patterns/task-list';

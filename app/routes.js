@@ -137,7 +137,7 @@ router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?'
 
 router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
   var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
-  var alert, anchor, titlechange, headingchange = false;
+  var alert, anchor, titlechange, headingchange, alert2 = false;
 
   switch (type) {
     case 'a':
@@ -156,6 +156,10 @@ router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?
     case 'e':
       titlechange = true;
       headingchange = true;
+      break;
+    case 'f':
+      titlechange = true;
+      alert = true;
       break;
   }
 
