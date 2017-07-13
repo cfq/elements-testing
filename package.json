@@ -4,7 +4,7 @@
   "version": "4.0.0",
   "private": true,
   "engines": {
-    "node": ">=6.0 <6.7"
+    "node": ">=8.1.4"
   },
   "scripts": {
     "start": "if [ -d \"node_modules\" ]; then gulp; else echo 'gulp is missing - try running npm install' ; fi",
