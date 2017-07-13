@@ -98,46 +98,9 @@ router.post('/example/:exampleName/:type?', function (req, res){
 
 router.get('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
   var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
-  var alert, anchor, titlechange, headingchange = false;
+  var alert, anchor, titlechange, headingchange, removefocus = false;
   var page = (position=='index') ? 'index' : 'form';
   var template = 'error-summary/' + page;
-
-  switch (type) {
-    case 'a':
-      alert = true;
-      break;
-    case 'b':
-      anchor = true;
-      break;
-    case 'c':
-      alert = true;
-      anchor = true;
-      break;
-    case 'd':
-      titlechange = true;
-      break;
-    case 'e':
-      titlechange = true;
-      headingchange = true;
-      break;
-  }
-
-  res.render(template, {
-    error: false,
-    summaryfirst: (position == 'error-title'),
-    summarylevel: summarylevel,
-    titlelevel: titlelevel,
-    alert: alert,
-    anchor: anchor,
-    titlechange: titlechange,
-    headingchange: headingchange,
-    label: !label.length
-  })
-})
-
-router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
-  var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
-  var alert, anchor, titlechange, headingchange, alert2 = false;
 
   switch (type) {
     case 'a':
@@ -161,6 +124,58 @@ router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?
       titlechange = true;
       alert = true;
       break;
+    case 'g':
+      titlechange = true;
+      alert = true;
+      removefocus = true;
+      break;
+  }
+
+  res.render(template, {
+    error: false,
+    summaryfirst: (position == 'error-title'),
+    summarylevel: summarylevel,
+    titlelevel: titlelevel,
+    alert: alert,
+    anchor: anchor,
+    titlechange: titlechange,
+    headingchange: headingchange,
+    label: !label.length,
+    removefocus: removefocus
+  })
+})
+
+router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?', function (req, res){
+  var {position='error-title', summarylevel='2', titlelevel='1', type='', label=''} = req.params;
+  var alert, anchor, titlechange, headingchange, alert2, removefocus = false;
+
+  switch (type) {
+    case 'a':
+      alert = true;
+      break;
+    case 'b':
+      anchor = true;
+      break;
+    case 'c':
+      alert = true;
+      anchor = true;
+      break;
+    case 'd':
+      titlechange = true;
+      break;
+    case 'e':
+      titlechange = true;
+      headingchange = true;
+      break;
+    case 'f':
+      titlechange = true;
+      alert = true;
+      break;
+    case 'g':
+      titlechange = true;
+      alert = true;
+      removefocus = true;
+      break;
   }
 
   res.render('error-summary/form', {
@@ -172,7 +187,8 @@ router.post('/error-summary/:position/:summarylevel?/:titlelevel?/:type?/:label?
     anchor: anchor,
     titlechange: titlechange,
     headingchange: headingchange,
-    label: !label.length
+    label: !label.length,
+    removefocus: removefocus
   })
 })
 
